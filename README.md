@@ -94,6 +94,18 @@ Drift values
 
 Field results
 
+The version of the file with the test ending is improved with frame synchronization, which reduces angle differences during fast turns, and an experimental improvement in handling over bumps.
+
+I've devised a method that solves the problem of suspended cabs rocking sideways when a wheel hits a pothole. Using a sensor mounted as a WAS on the steering knuckle, you can detect the bump in advance, using the front wheel as a bump scanner before the rear wheel hits the pothole. Anticipating the bump, you can freeze the setpoint momentarily to prevent a sudden swing.
+
+I've already implemented this in the code; you just need to manually select the parameters for your tractor and enter them into the code, such as the distance between the front and rear wheels, the freeze time, and the bump detection thresholds.
+
+
+Of course, the code also states that it only works when driving straight and is inactive when the wheels are turned so as not to block the steering when cornering.
+
+
+
+
 📜 License
 
 Open-source for AgOpenGPS community use.
